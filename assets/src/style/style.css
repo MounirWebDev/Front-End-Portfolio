@@ -1,0 +1,366 @@
+/* ==== GOOGLE FONTS ==== */
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&family=Shantell+Sans:wght@300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&display=swap');
+
+/* ==== CSS VARIABLES ==== */
+:root {
+    /* 1- Defining colors */
+    --bodyColor: #d4d4d41e;
+    --textColor: #000;
+    --titleColor: #fd510c;
+    --lightColor: #d1d1d1;
+
+    /* 2- Defining text's size and typography*/
+    --specialFont: 'Dancing Script', cursive;
+    --titleFont: 'Shantell Sans', cursive;
+    --textFont: 'Rubik', sans-serif;
+    --bigSize: 2rem;
+    --normalSize: 1.2rem;
+    --smallSize: .989rem;
+}
+
+@media screen and (max-width: 750px) {
+
+    /* 1- Defining text's size and typography*/
+    :root {
+        --bigSize: 1.5rem;
+        --normalSize: 1rem;
+        --smallSize: .878rem;
+    }
+
+}
+
+/* ==== BASES ==== */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    background-color: var(--bodyColor);
+    font-family: var(--textFont);
+}
+
+a {
+    color: var(--titleColor);
+}
+
+img {
+    width: var(--bigSize);
+}
+
+b {
+    color: var(--titleColor);
+    font-family: var(--titleFont);
+}
+
+h3 {
+    margin-block: 20px;
+    text-transform: uppercase;
+    font-family: var(--titleFont);
+    font-weight: bold;
+}
+
+/* ==== NAVBAR ====  */
+.hdr {
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logoLink {
+    font-size: calc(var(--bigSize) + .5rem);
+    font-family: var(--specialFont);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.contactLink {
+    font-size: var(--normalSize);
+    font-family: var(--titleFont);
+    font-weight: 300;
+    text-decoration-thickness: 1px;
+}
+
+/* ==== RESPONSIVE ==== */
+@media screen and (max-width: 575px) {
+    .hdr {
+        padding: 15px;
+    }
+
+    .nav {
+        width: 100%;
+    }
+}
+
+/* ==== PAGE SETTINGS ==== */
+.settings {
+    width: 200px;
+    height: calc(100vh - 150px);
+    background-color: #f1efef;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 80px;
+    right: 0;
+    z-index: 10;
+}
+
+.openSett {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: -20px;
+    cursor: pointer;
+    animation: rotate 1.5s linear 0s infinite;
+}
+
+@keyframes rotate {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.openSett i {
+    font-size: var(--normalSize);
+}
+
+.mode {
+    width: calc(100% - 50px);
+    padding-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid;
+}
+
+.mode div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.75rem;
+}
+
+.mode div i {
+    padding-bottom: .25rem;
+    font-size: var(--normalSize);
+    cursor: pointer;
+}
+
+.activeTheme {
+    color: var(--titleColor);
+    border-bottom: 1px solid var(--titleColor);
+}
+
+.colors {
+    width: calc(100% - 50px);
+    margin-top: 50px;
+    padding-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid;
+}
+
+.colors div {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.colors div div {
+    width: 30px;
+    height: 30px;
+    margin: 10px;
+    border: 1px solid;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.red {
+    background-color: red;
+}
+
+.green {
+    background-color: green;
+}
+
+.blue {
+    background-color: blue;
+}
+
+.orange {
+    background-color: orange;
+}
+
+.white {
+    background-color: white;
+}
+
+.black {
+    background-color: black;
+}
+
+/* ==== MAIN ==== */
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ==== ABOUT ME AND SKILLS SECTION ==== */
+.bio {
+    width: calc(100% - 20px);
+    margin-block: 125px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border: 1px solid var(--lightColor);
+}
+
+.gif {
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+}
+
+.gif img {
+    width: 100%;
+    height: 200px;
+    border-radius: 100%;
+}
+
+.bioContainer {
+    width: 80%;
+    padding: 15px;
+}
+
+.bioContainer p {
+    margin-block: 5px;
+    color: var(--textColor);
+    font-size: var(--normalSize);
+    font-weight: 300;
+}
+
+.aboutMe1 span {
+    cursor: pointer;
+}
+
+.aboutMe2 span {
+    margin-inline: 10px;
+    color: var(--titleColor);
+    font-size: var(--bigSize);
+    font-family: var(--titleFont);
+    font-weight: 600;
+}
+
+.skills {
+    margin-block: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.skills b {
+    color: var(--textColor);
+    font-size: var(--smallSize);
+}
+
+.currentlyLearning,
+.goingToLearning {
+    width: 50%;
+    padding: 15px;
+    border: 1px solid var(--lightColor);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.currentlyLearning div,
+.goingToLearning div div {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.goingToLearning {
+    margin-left: 5px;
+}
+
+.goingToLearning div {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* ==== RESPONSIVE ====*/
+@media screen and (max-width: 750px) {
+    .bio {
+        margin-block: 100px;
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    .bio {
+        width: calc(100% - 5px);
+    }
+
+    .bioContainer {
+        width: 90%;
+    }
+
+    .skills {
+        border: 1px solid var(--lightColor);
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .currentlyLearning {
+        border: none;
+        border-bottom: 1px solid var(--lightColor);
+    }
+
+    .goingToLearning {
+        width: 100%;
+        margin-left: 0px;
+        border: none;
+    }
+}
+
+/* ==== PROJECTS SECTION ==== */
+.myProjects h1 {
+    text-transform: uppercase;
+    font-size: calc(var(--bigSize) + .5rem);
+    font-family: var(--titleFont);
+}

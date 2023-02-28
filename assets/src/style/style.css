@@ -42,10 +42,7 @@ body {
     width: 100%;
     background-color: var(--bodyColor);
     font-family: var(--textFont);
-}
-
-a {
-    color: var(--titleColor);
+    overflow-x: hidden;
 }
 
 img {
@@ -60,6 +57,7 @@ b {
 h3 {
     margin-block: 20px;
     text-transform: uppercase;
+    text-align: center;
     font-family: var(--titleFont);
     font-weight: bold;
 }
@@ -87,6 +85,7 @@ h3 {
     font-family: var(--specialFont);
     font-weight: 700;
     text-decoration: none;
+    color: var(--titleColor);
 }
 
 .contactLink {
@@ -94,6 +93,7 @@ h3 {
     font-family: var(--titleFont);
     font-weight: 300;
     text-decoration-thickness: 1px;
+    color: var(--titleColor);
 }
 
 /* ==== RESPONSIVE ==== */
@@ -109,9 +109,11 @@ h3 {
 
 /* ==== PAGE SETTINGS ==== */
 .settings {
-    width: 200px;
-    height: calc(100vh - 150px);
+    width: 230px;
+    padding: 15px;
+    height: calc(auto + 80px);
     background-color: #f1efef;
+    color: var(--textColor);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -120,6 +122,7 @@ h3 {
     top: 80px;
     right: 0;
     z-index: 10;
+    transform: translateX(230px);
 }
 
 .openSett {
@@ -221,6 +224,38 @@ h3 {
 
 .black {
     background-color: black;
+}
+
+.socialNetwork {
+    width: calc(100% - 50px);
+    margin-top: 50px;
+    padding-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid;
+}
+
+.socialNetwork div {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.socialNetwork div a {
+    margin: 15px;
+    color: var(--textColor);
+}
+
+.socialNetwork div a:hover {
+    color: var(--titleColor);
+}
+
+.socialNetwork div a i {
+    font-size: var(--normalSize);
 }
 
 /* ==== MAIN ==== */
@@ -359,8 +394,107 @@ main {
 }
 
 /* ==== PROJECTS SECTION ==== */
+.myProjects {
+    width: calc(100% - 20px);
+    margin-block: 125px;
+    color: var(--textColor);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .myProjects h1 {
+    margin-block: 50px;
     text-transform: uppercase;
     font-size: calc(var(--bigSize) + .5rem);
     font-family: var(--titleFont);
+}
+
+.ProjectsContainer {
+    width: 80%;
+    padding: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.pjct {
+    padding: 10px;
+    margin: 20px;
+    height: 350px;
+    border-bottom: 1px solid;
+    border-right: 1px solid;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: transform .2s;
+}
+
+.pjct:hover {
+    transform: rotate(5deg);
+}
+
+.pjct h2 {
+    text-transform: capitalize;
+    font-family: var(--titleFont);
+}
+
+.pjct img {
+    width: 450px;
+    opacity: .8;
+    transition: opacity .2s;
+}
+
+.pjct:hover img {
+    opacity: 1;
+}
+
+.pjct:hover img {
+    opacity: 1;
+}
+
+.usedLanguages {
+    width: 80%;
+    margin-block: 15px;
+    text-transform: uppercase;
+    text-align: start;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.btns {
+    width: 80%;
+    margin-block: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.btns button {
+    border: none;
+    background-color: transparent;
+}
+
+.btns button a {
+    width: 75px;
+    height: 25px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: white;
+    border-radius: 5px;
+    background-color: var(--titleColor);
+    font-size: var(--smallSize);
+    font-family: var(--titleFont);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btns button a:hover {
+    opacity: .8;
 }

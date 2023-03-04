@@ -6,10 +6,12 @@
 /* ==== CSS VARIABLES ==== */
 :root {
     /* 1- Defining colors */
-    --bodyColor: #d4d4d41e;
-    --textColor: #000;
+    --bodyColor: #fcfcfd;
+    --containerColor: #f2f2f3;
+    --lightColor: #8a8f93;
+    --textColor: #45484a;
     --titleColor: #fd510c;
-    --lightColor: #d1d1d1;
+    --secondTitleColor: #27292a;
 
     /* 2- Defining text's size and typography*/
     --specialFont: 'Dancing Script', cursive;
@@ -43,6 +45,7 @@ body {
     background-color: var(--bodyColor);
     font-family: var(--textFont);
     overflow-x: hidden;
+    position: relative;
 }
 
 img {
@@ -65,12 +68,14 @@ h3 {
 /* ==== NAVBAR ====  */
 .hdr {
     padding: 15px;
+    background-color: var(--bodyColor);
+    box-shadow: 0 4px 20px hsla(207, 24%, 35%, .1);
     display: flex;
     justify-content: center;
     align-items: center;
     position: sticky;
     top: 0;
-    z-index: 100;
+    z-index: 10;
 }
 
 .nav {
@@ -110,30 +115,33 @@ h3 {
 /* ==== PAGE SETTINGS ==== */
 .settings {
     width: 230px;
+    height: 100vh;
     padding: 15px;
-    height: calc(auto + 80px);
-    background-color: #f1efef;
+    background-color: var(--containerColor);
     color: var(--textColor);
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
-    position: absolute;
-    top: 80px;
+    position: fixed;
+    top: 0px;
     right: 0;
-    z-index: 10;
+    z-index: 100;
     transform: translateX(230px);
+    transition: transform .2s;
 }
 
 .openSett {
     display: flex;
     justify-content: center;
     align-items: center;
-    position: absolute;
-    top: 0;
-    left: -20px;
+    color: var(--textColor);
+    position: fixed;
+    top: 100px;
+    right: 15px;
     cursor: pointer;
-    animation: rotate 1.5s linear 0s infinite;
+    animation: rotate 2.5s linear 0s infinite;
+    z-index: 10;
 }
 
 @keyframes rotate {
@@ -148,7 +156,7 @@ h3 {
 
 .mode {
     width: calc(100% - 50px);
-    padding-bottom: 15px;
+    padding-bottom: 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -175,9 +183,8 @@ h3 {
 }
 
 .colors {
-    width: calc(100% - 50px);
-    margin-top: 50px;
-    padding-bottom: 15px;
+    width: calc(100% - 25px);
+    padding-bottom: 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -207,29 +214,28 @@ h3 {
 }
 
 .green {
-    background-color: green;
+    background-color: greenyellow;
 }
 
 .blue {
-    background-color: blue;
+    background-color: skyblue;
 }
 
 .orange {
     background-color: orange;
 }
 
-.white {
-    background-color: white;
+.purple {
+    background-color: purple;
 }
 
-.black {
-    background-color: black;
+.peru {
+    background-color: peru;
 }
 
 .socialNetwork {
     width: calc(100% - 50px);
-    margin-top: 50px;
-    padding-bottom: 15px;
+    padding-bottom: 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -254,8 +260,17 @@ h3 {
     color: var(--titleColor);
 }
 
+.socialNetwork div a:active {
+    color: var(--titleColor);
+}
+
 .socialNetwork div a i {
     font-size: var(--normalSize);
+}
+
+.closeSett i {
+    font-size: var(--normalSize);
+    cursor: pointer;
 }
 
 /* ==== MAIN ==== */
@@ -270,10 +285,10 @@ main {
 .bio {
     width: calc(100% - 20px);
     margin-block: 125px;
+    background-color: var(--containerColor);
     display: flex;
     justify-content: space-around;
     align-items: center;
-    border: 1px solid var(--lightColor);
 }
 
 .gif {
@@ -358,6 +373,10 @@ main {
     align-items: center;
 }
 
+.react {
+    animation: rotate 1.5s linear 0s infinite;
+}
+
 /* ==== RESPONSIVE ====*/
 @media screen and (max-width: 750px) {
     .bio {
@@ -395,8 +414,7 @@ main {
 
 /* ==== PROJECTS SECTION ==== */
 .myProjects {
-    width: calc(100% - 20px);
-    margin-block: 125px;
+    width: 100%;
     color: var(--textColor);
     display: flex;
     flex-direction: column;
@@ -406,22 +424,23 @@ main {
 
 .myProjects h1 {
     margin-block: 50px;
+    color: var(--titleColor);
     text-transform: uppercase;
     font-size: calc(var(--bigSize) + .5rem);
     font-family: var(--titleFont);
 }
 
 .ProjectsContainer {
-    width: 80%;
+    width: 100%;
     padding: 15px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
 }
 
 .pjct {
-    padding: 10px;
+    padding: 15px;
     margin: 20px;
     height: 350px;
     border-bottom: 1px solid;
@@ -443,7 +462,7 @@ main {
 }
 
 .pjct img {
-    width: 450px;
+    width: 400px;
     opacity: .8;
     transition: opacity .2s;
 }
@@ -497,4 +516,21 @@ main {
 
 .btns button a:hover {
     opacity: .8;
+}
+
+/* ==== RESPONSIVE ==== */
+@media screen and (max-width: 575px) {
+    .pjct img {
+        width: 290px;
+    }
+}
+
+
+/* ==== JS EVENT ==== */
+.open {
+    transform: translateX(0px);
+}
+
+.close {
+    transform: translateX(230px);
 }

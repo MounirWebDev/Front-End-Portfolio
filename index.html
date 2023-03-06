@@ -23,10 +23,8 @@
                     mounir
                 </a>
             </div>
-            <div class="contact">
-                <a href="mailto:mounirabcire@gmail.com" class="contactLink">
-                    contact
-                </a>
+            <div class="contactLink">
+                contact
             </div>
         </nav>
     </header>
@@ -84,7 +82,7 @@
             <div class="bioContainer">
                 <p class="aboutMe1">
                     Hi, I'm Mounir. I'm base in a city called Oran in Algeria <br>
-                    Here's a bit more <span><b>about me</b></span>.
+                    Here's a bit more <span id="showMoreAboutMe"><b>about me</b></span>.
                 </p>
                 <p class="aboutMe2">
                     I'm a <b>Junior</b> <span>Front-end Developer</span>. I build websites using the following
@@ -204,25 +202,57 @@
                 </div>
             </div>
         </section>
-
-        <!-- ==== FOOTER ==== -->
-        <footer class="footer">
-            <div class="footerSocialNetwork">
-                <a href="mailto:mounirabcire@gmail.com" target="_blank">
-                    <i class="ri-mail-line"></i>
-                </a>
-                <a href="https://www.instagram.com/mounirwebdev/?hl=en" target="_blank">
-                    <i class="ri-instagram-line"></i>
-                </a>
-                <a href="https://github.com/MounirWebDev" target="_blank">
-                    <i class="ri-github-line"></i>
-                </a>
-            </div>
-            <div class="info">
-                © 2023 Mounir Front-end Developer
-            </div>
-        </footer>
     </main>
+
+    <!-- ==== TO THE TOP PAGE ==== -->
+    <div class="topPage">
+        <i class="ri-arrow-up-fill"></i>
+    </div>
+
+    <!-- ==== CONTACT FORM AND MORE ABOUT ME ====  -->
+    <div class="contact">
+        <div class="closeCont">
+            <i class="ri-close-line"></i>
+        </div>
+        <form class="form">
+            <h2>lets have a chat!</h2>
+            <p>I'm currently open for new opportunities.</p>
+            <div class='inputBox'>
+                <input class='inputText' type='text' required name='name'>
+                <span>USERNAME</span>
+            </div>
+            <div class='inputBox'>
+                <input class='inputText' type='text' required name='email'>
+                <span>EMAIL</span>
+            </div>
+            <div class='inputBox'>
+                <textarea class='inputText msgArea' required name='message'></textarea>
+                <span>MESSAGE</span>
+            </div>
+            <input type='submit' value='SUBMIT' class='submitBox' >
+        </form>
+        <div class="moreAboutMe">
+
+        </div>
+    </div>
+
+    <!-- ==== FOOTER ==== -->
+    <footer class="footer">
+        <div class="footerSocialNetwork">
+            <a href="mailto:mounirabcire@gmail.com" target="_blank">
+                <i class="ri-mail-line"></i>
+            </a>
+            <a href="https://www.instagram.com/mounirwebdev/?hl=en" target="_blank">
+                <i class="ri-instagram-line"></i>
+            </a>
+            <a href="https://github.com/MounirWebDev" target="_blank">
+                <i class="ri-github-line"></i>
+            </a>
+        </div>
+        <div class="info">
+            © 2023 Mounir Front-end Developer
+        </div>
+    </footer>
 </body>
 
 </html>

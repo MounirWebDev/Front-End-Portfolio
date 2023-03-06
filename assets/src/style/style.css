@@ -34,6 +34,10 @@
 }
 
 /* ==== BASES ==== */
+html {
+    scroll-behavior: smooth;
+}
+
 * {
     padding: 0;
     margin: 0;
@@ -105,8 +109,9 @@ h2 {
     font-size: var(--normalSize);
     font-family: var(--titleFont);
     font-weight: 300;
-    text-decoration-thickness: 1px;
     color: var(--titleColor);
+    border-bottom: 1px solid var(--titleColor);
+    cursor: pointer;
 }
 
 /* ==== RESPONSIVE ==== */
@@ -149,7 +154,7 @@ h2 {
     right: 15px;
     cursor: pointer;
     animation: rotate 2.5s linear 0s infinite;
-    z-index: 10;
+    z-index: 51;
 }
 
 @keyframes rotate {
@@ -300,7 +305,7 @@ main {
 }
 
 .gif {
-    width: 200px;
+    width: 225px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -326,6 +331,7 @@ main {
 }
 
 .aboutMe1 span {
+    border-bottom: 1px solid var(--titleColor);
     cursor: pointer;
 }
 
@@ -531,8 +537,209 @@ main {
     .pjct img {
         width: 290px;
     }
+
     .usedLanguages {
         width: 95%;
+    }
+}
+
+/* ==== TO THE TOP PAGE ==== */
+.topPage {
+    width: 40px;
+    height: 40px;
+    background-color: var(--titleColor);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 100px;
+    left: 15px;
+    z-index: 10;
+    animation: move 2s linear 0s infinite;
+    cursor: pointer;
+    display: none;
+}
+
+@keyframes move {
+
+    0%,
+    100% {
+        margin-bottom: 0;
+    }
+
+    50% {
+        margin-bottom: 5px;
+    }
+}
+
+.topPage i {
+    color: #fff;
+    font-size: calc(var(--normalSize) + 5px);
+}
+
+/* RESPONSIVE */
+@media screen and (max-width: 575px) {
+    .topPage {
+        left: 5px;
+    }
+}
+
+/* ==== CONTACT FORM AND MORE ABOUT ME ==== */
+.contact {
+    width: 90%;
+    height: 100vh;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+    z-index: 50;
+    display: none;
+}
+
+.closeCont {
+    color: var(--textColor);
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    z-index: 50;
+}
+
+.closeCont i {
+    font-size: var(--normalSize);
+}
+
+.moreAboutMe {
+    width: 50%;
+    height: 100%;
+    background-color: #fff;
+    transform: translateX(100%);
+    transition: transform .5s;
+}
+
+.form {
+    padding: 30px;
+    width: 50%;
+    height: 100%;
+    background-color: var(--containerColor);
+    color: var(--textColor);
+    transform: translateX(-100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: transform .5s;
+}
+
+form h2 {
+    margin-block: 20px;
+}
+
+form p {
+    text-transform: capitalize;
+    font-size: var(--smallSize);
+    position: relative;
+    top: -20px;
+}
+
+.inputBox {
+    margin: 20px 0;
+    width: 300px;
+    font-weight: bold;
+    position: relative;
+}
+
+.inputText {
+    width: 100%;
+    padding: 10px;
+    background-color: var(--containerColor);
+    color: var(--textColor);
+    border: none;
+    border-bottom: 1px solid var(--titleColor);
+    font-size: 18px;
+    font-weight: 700;
+    resize: none;
+    position: relative;
+    outline: none;
+    transition: border 0.4s;
+}
+
+.msgArea {
+    height: 200px;
+}
+
+.inputBox span {
+    letter-spacing: 3px;
+    position: absolute;
+    left: 4px;
+    transform: translateY(2px);
+    pointer-events: none;
+    transition: transform 0.4s;
+}
+
+.inputText:focus,
+.inputText:valid {
+    border: 2px solid var(--titleColor);
+}
+
+.inputText:focus~span,
+.inputText:valid~span {
+    width: 100px;
+    padding: 5px 10px;
+    background-color: var(--titleColor);
+    color: #fff;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    transform: translate(146px, -23px);
+}
+
+.submitBox {
+    margin: 10px 0;
+    padding: 18px 25px;
+    color: var(--textColor);
+    border: 1px solid var(--lightColor);
+    background-color: transparent;
+    letter-spacing: 2.5px;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.submitBox:hover {
+    color: #fff;
+    border: none;
+    background-color: var(--titleColor);
+    transition: all 0.2s;
+}
+
+/* RESPONSIVE */
+@media screen and (max-width: 991px) {
+    .contact {
+        width: 95%;
+    }
+}
+
+@media screen and (max-width: 775px) {
+    .contact {
+        width: 90%;
+        flex-direction: column;
+    }
+
+    .contact div:not(.closeCont) {
+        width: 100%;
+        height: 50%;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    .contact {
+        width: 100%;
     }
 }
 
@@ -548,8 +755,8 @@ footer {
 }
 
 .footerSocialNetwork {
-    margin: 5px;
     width: 300px;
+    margin: 5px;
     display: flex;
     align-items: center;
     justify-content: space-evenly;

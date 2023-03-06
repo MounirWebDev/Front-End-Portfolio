@@ -597,30 +597,67 @@ main {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    overflow: hidden;
+    overflow-x: hidden;
     z-index: 50;
     display: none;
 }
 
 .closeCont {
-    color: var(--textColor);
     position: absolute;
-    top: 10px;
-    right: 10px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     cursor: pointer;
     z-index: 50;
 }
 
 .closeCont i {
-    font-size: var(--normalSize);
+    font-size: var(--bigSize);
+    color: var(--secondTitleColor);
 }
 
 .moreAboutMe {
+    padding: 30px;
     width: 50%;
     height: 100%;
-    background-color: #fff;
+    background-color: var(--bodyColor);
+    color: var(--textColor);
     transform: translateX(100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     transition: transform .5s;
+}
+
+.moreAboutMe h2 {
+    margin-block: 20px;
+}
+
+.intilaPara {
+    text-transform: capitalize;
+    font-size: var(--smallSize);
+    position: relative;
+    top: -25px;
+}
+
+.firstPara,
+.secondPara {
+    margin: 7px;
+    line-height: 1.8;
+    text-transform: capitalize;
+}
+
+.languages {
+    margin-top: 10px;
+    width: 50%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.languages img {
+    width: 40px;
 }
 
 .form {
@@ -637,19 +674,20 @@ main {
     transition: transform .5s;
 }
 
-form h2 {
+.form h2 {
     margin-block: 20px;
 }
 
-form p {
+.form p {
     text-transform: capitalize;
+    text-align: center;
     font-size: var(--smallSize);
     position: relative;
-    top: -20px;
+    top: -25px;
 }
 
 .inputBox {
-    margin: 20px 0;
+    margin: 15px 0;
     width: 300px;
     font-weight: bold;
     position: relative;
@@ -657,7 +695,7 @@ form p {
 
 .inputText {
     width: 100%;
-    padding: 10px;
+    padding: 7px;
     background-color: var(--containerColor);
     color: var(--textColor);
     border: none;
@@ -727,13 +765,26 @@ form p {
 
 @media screen and (max-width: 775px) {
     .contact {
-        width: 90%;
+        width: 100%;/*90*/
+        height: 200vh;
         flex-direction: column;
     }
-
-    .contact div:not(.closeCont) {
+    .moreAboutMe {
         width: 100%;
         height: 50%;
+    }
+
+    .form {
+        width: 100%;
+        height: 50%;
+    }
+
+    .inputBox {
+        margin-block: 5px;
+    }
+
+    .msgArea {
+        height: 50px;
     }
 }
 

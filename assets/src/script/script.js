@@ -97,14 +97,14 @@ function showContact() {
     setTimeout(() => {
         MoreAbMe.style.transform = 'translateX(0%)'
         form.style.transform = 'translateX(0%)'
-    }, 300)
+    }, 1)
 }
 // 2- close Contact Form And More About Me
-closeContact.addEventListener('click', ()=>{
+closeContact.addEventListener('click', () => {
     MoreAbMe.style.transform = 'translateX(100%)'
     form.style.transform = 'translateX(-100%)'
-    setTimeout(()=>{
+    setTimeout(() => {
         contact.style.display = 'none'
-    },300)
+    }, 200)
 })
 

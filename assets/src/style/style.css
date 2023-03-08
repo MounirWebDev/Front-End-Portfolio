@@ -106,12 +106,15 @@ h2 {
 }
 
 .contactLink {
+    border-bottom: 1px solid var(--titleColor);
+}
+
+.contactLink a {
     font-size: var(--normalSize);
     font-family: var(--titleFont);
     font-weight: 300;
     color: var(--titleColor);
-    border-bottom: 1px solid var(--titleColor);
-    cursor: pointer;
+    text-decoration: none;
 }
 
 /* ==== RESPONSIVE ==== */
@@ -281,8 +284,15 @@ h2 {
     font-size: var(--normalSize);
 }
 
+.closeSett {
+    position: absolute;
+    top: 35px;
+    left: 10px;
+}
+
 .closeSett i {
-    font-size: var(--normalSize);
+    font-size: calc(var(--bigSize) + .5rem);
+    color: var(--secondTitleColor);
     cursor: pointer;
 }
 
@@ -328,6 +338,10 @@ main {
     color: var(--textColor);
     font-size: var(--normalSize);
     font-weight: 300;
+}
+
+.aboutMe1 a {
+    text-decoration: none;
 }
 
 .aboutMe1 span {
@@ -438,7 +452,7 @@ main {
 
 .myProjects h1 {
     margin-block: 50px;
-    color: var(--titleColor);
+    color: var(--secondTitleColor);
     text-transform: uppercase;
     font-size: calc(var(--bigSize) + .5rem);
     font-family: var(--titleFont);
@@ -555,7 +569,7 @@ main {
     position: fixed;
     bottom: 100px;
     left: 15px;
-    z-index: 10;
+    z-index: 51;
     animation: move 2s linear 0s infinite;
     cursor: pointer;
     display: none;
@@ -604,16 +618,19 @@ main {
 
 .closeCont {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: 50px;
+    right: 20px;
     cursor: pointer;
     z-index: 50;
 }
 
 .closeCont i {
-    font-size: var(--bigSize);
+    font-size: calc(var(--bigSize) + .5rem);
     color: var(--secondTitleColor);
+}
+
+.scrollDown {
+    display: none;
 }
 
 .moreAboutMe {
@@ -765,10 +782,57 @@ main {
 
 @media screen and (max-width: 775px) {
     .contact {
-        width: 100%;/*90*/
         height: 200vh;
-        flex-direction: column;
+        flex-direction: column-reverse;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translate(0%, 0%);
     }
+
+    .closeCont {
+        top: 50px;
+        left: 25px;
+    }
+
+    .scrollDown {
+        height: 32px;
+        width: 20px;
+        border-radius: 15px;
+        border: 2px solid var(--secondTitleColor);
+        font-size: var(--normalSize);
+        display: block;
+        position: absolute;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .scrollDown::after {
+        content: '';
+        height: 6px;
+        width: 5px;
+        background-color: var(--secondTitleColor);
+        border-radius: 50%;
+        position: absolute;
+        top: 5px;
+        left: 50%;
+        transform: translateX(-50%);
+        animation: scroll-down 2s ease-in infinite;
+    }
+
+    @keyframes scroll-down {
+
+        0%,
+        100% {
+            top: 5px;
+        }
+
+        50% {
+            top: 14px;
+        }
+    }
+
     .moreAboutMe {
         width: 100%;
         height: 50%;
@@ -777,14 +841,7 @@ main {
     .form {
         width: 100%;
         height: 50%;
-    }
-
-    .inputBox {
-        margin-block: 5px;
-    }
-
-    .msgArea {
-        height: 50px;
+        border-bottom: 3px solid var(--lightColor);
     }
 }
 

@@ -108,3 +108,12 @@ closeContact.addEventListener('click', () => {
     }, 200)
 })
 
+// ==== SEND EMAIL ====
+const contactForm = document.getElementById("contact-form")
+const sendEmail = () => {
+    emailjs.sendForm('service_t3yztyg', 'template_23xy5nq', '#contact-form', 'CXO_7BtFH0n7tAUzR');
+    alert("Sent!");
+}
+
+contactForm.addEventListener('submit', sendEmail)
+

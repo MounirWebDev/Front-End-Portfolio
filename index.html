@@ -214,19 +214,19 @@
         <div class="closeCont">
             <i class="ri-close-line"></i>
         </div>
-        <form class="form">
+        <form class="form" id="contact-form">
             <h2>lets have a chat!</h2>
             <p>I'm currently open for new opportunities.</p>
             <div class='inputBox'>
-                <input class='inputText' type='text' required name='name'>
+                <input class='inputText' type='text' required name='user_name' id="contact-name">
                 <span>USERNAME</span>
             </div>
             <div class='inputBox'>
-                <input class='inputText' type='text' required name='email'>
+                <input class='inputText' type='text' required name='user_email' id="contact-email">
                 <span>EMAIL</span>
             </div>
             <div class='inputBox'>
-                <textarea class='inputText msgArea' required name='message'></textarea>
+                <textarea class='inputText msgArea' required name='user_message' id="contact-message"></textarea>
                 <span>MESSAGE</span>
             </div>
             <input type='submit' value='SUBMIT' class='submitBox'>
@@ -274,5 +274,8 @@
         </div>
     </footer>
 </body>
+<!-- ==== EMAIL JS ==== -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
 
 </html>

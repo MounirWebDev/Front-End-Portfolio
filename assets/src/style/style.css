@@ -768,7 +768,6 @@ main {
 
 .submitBox:hover {
     color: #fff;
-    border: none;
     background-color: var(--titleColor);
     transition: all 0.2s;
 }

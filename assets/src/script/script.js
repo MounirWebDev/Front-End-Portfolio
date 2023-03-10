@@ -25,13 +25,13 @@ const hdr = document.querySelector('header')
 const iconTheme = document.querySelectorAll('.mode i')
 
 // 4- Check The Dark Variable In The Local Storage
-if (window.localStorage.getItem('dark-mode') === 'true'){
+if (window.localStorage.getItem('dark-mode') === 'true') {
     iconTheme.forEach((icon) => {
         icon.classList.remove('activeTheme')
         iconTheme[0].classList.add('activeTheme')
     })
     darkMode()
-} else{
+} else {
     iconTheme.forEach((icon) => {
         icon.classList.remove('activeTheme')
         iconTheme[1].classList.add('activeTheme')
@@ -75,7 +75,7 @@ const colors = document.querySelector('.colors')
 const color = document.querySelectorAll('.colors div div')
 
 // 2- Check The title-color Variable In The Local Storage
-if(window.localStorage.getItem('title-color')){
+if (window.localStorage.getItem('title-color')) {
     root.style.setProperty('--titleColor', window.localStorage.getItem('title-color'))
 }
 color.forEach((clr) => {
@@ -151,3 +151,12 @@ Thank You .`);
 
 contactForm.addEventListener('submit', sendEmail)
 
+// ==== Moving Mouse ====
+const mouseContainer = document.getElementById('mouseContainer')
+
+window.addEventListener('mousemove', (e) => {
+    let x = e.pageX + 8,
+        y = e.pageY + 17
+    mouseContainer.style.top = y + 'px'
+    mouseContainer.style.left = x + 'px'
+})

@@ -477,12 +477,8 @@ main {
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    position: relative;
 }
-
-/* .pjct h2 {
-    text-transform: capitalize;
-    font-family: var(--titleFont);
-} */
 
 .pjct img {
     width: 400px;
@@ -501,6 +497,46 @@ main {
 
 .pjct:hover img {
     opacity: 1;
+}
+
+.webInfo {
+    width: calc(100%);
+    height: calc(100% - 5px);
+    padding: 15px;
+    background-color: var(--containerColor);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(calc(-50% - 500px), -50%);
+    transition: transform .5s;
+    overflow: auto;
+    z-index: 5;
+    display: none;
+}
+
+.webInfo p {
+    text-align: center;
+    text-transform: capitalize;
+    font-size: var(--smallSize);
+    line-height: 1.5;
+}
+
+.arrowLeft {
+    width: 20px;
+    color: #fff;
+    background-color: var(--titleColor);
+    font-size: var(--normalSize);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    cursor: pointer;
+    z-index: 5;
 }
 
 .usedLanguages {
@@ -548,8 +584,20 @@ main {
 
 /* ==== RESPONSIVE ==== */
 @media screen and (max-width: 575px) {
+    .ProjectsContainer {
+        padding: 5px 2px;
+    }
+
+    .pjct {
+        margin: 5px 2px;
+    }
+
     .pjct img {
         width: 290px;
+    }
+
+    .btns {
+        width: 100%;
     }
 
     .usedLanguages {
@@ -891,7 +939,7 @@ footer {
 }
 
 /* ==== MOVING MOUSE ==== */
-#mouseContainer{
+#mouseContainer {
     width: 10px;
     height: 10px;
     background-color: var(--titleColor);

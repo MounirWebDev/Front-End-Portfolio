@@ -793,8 +793,9 @@ main {
 
 .inputText:focus~span,
 .inputText:valid~span {
-    width: 100px;
+    width: 110px;
     padding: 5px 10px;
+    text-align: center;
     background-color: var(--titleColor);
     color: #fff;
     font-size: 0.8rem;
@@ -830,6 +831,7 @@ main {
 @media screen and (max-width: 775px) {
     .contact {
         height: 200vh;
+        width: 100%;
         flex-direction: column-reverse;
         position: absolute;
         top: 0;
@@ -895,6 +897,23 @@ main {
 @media screen and (max-width: 575px) {
     .contact {
         width: 100%;
+        height: auto;
+    }
+
+    .moreAboutMe {
+        height: 100vh;
+    }
+
+    .form {
+        height: 150vh;
+    }
+
+    .inputBox {
+        margin-block: 25px;
+    }
+
+    .msgArea {
+        height: 300px;
     }
 }
 

@@ -1,0 +1,269 @@
+/* ==== CONTACT FORM AND MORE ABOUT ME ==== */
+.contact {
+    width: 90%;
+    height: 100vh;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow-x: hidden;
+    z-index: 50;
+    display: none;
+}
+
+.closeCont {
+    position: absolute;
+    top: 50px;
+    right: 20px;
+    cursor: pointer;
+    z-index: 50;
+}
+
+.closeCont i {
+    font-size: calc(var(--bigSize) + .5rem);
+    color: var(--secondTitleColor);
+}
+
+.scrollDown {
+    display: none;
+}
+
+.moreAboutMe {
+    padding: 30px;
+    width: 50%;
+    height: 100%;
+    background-color: var(--bodyColor);
+    color: var(--textColor);
+    transform: translateX(100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: transform .5s;
+}
+
+.moreAboutMe h2 {
+    margin-block: 20px;
+}
+
+.intilaPara {
+    text-transform: capitalize;
+    font-size: var(--smallSize);
+    position: relative;
+    top: -25px;
+}
+
+.firstPara,
+.secondPara {
+    margin: 7px;
+    line-height: 1.8;
+    text-transform: capitalize;
+}
+
+.languages {
+    margin-top: 10px;
+    width: 50%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.languages img {
+    width: 40px;
+}
+
+.form {
+    padding: 30px;
+    width: 50%;
+    height: 100%;
+    background-color: var(--containerColor);
+    color: var(--textColor);
+    transform: translateX(-100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: transform .5s;
+}
+
+.form h2 {
+    margin-block: 20px;
+}
+
+.form p {
+    text-transform: capitalize;
+    text-align: center;
+    font-size: var(--smallSize);
+    position: relative;
+    top: -25px;
+}
+
+.inputBox {
+    margin: 15px 0;
+    width: 300px;
+    font-weight: bold;
+    position: relative;
+}
+
+.inputText {
+    width: 100%;
+    padding: 7px;
+    background-color: var(--containerColor);
+    color: var(--textColor);
+    border: none;
+    border-bottom: 1px solid var(--titleColor);
+    font-size: 18px;
+    font-weight: 700;
+    resize: none;
+    position: relative;
+    outline: none;
+    transition: border 0.4s;
+}
+
+.msgArea {
+    height: 200px;
+}
+
+.inputBox span {
+    letter-spacing: 3px;
+    position: absolute;
+    left: 4px;
+    transform: translateY(2px);
+    pointer-events: none;
+    transition: transform 0.4s;
+}
+
+.inputText:focus,
+.inputText:valid {
+    border: 2px solid var(--titleColor);
+}
+
+.inputText:focus~span,
+.inputText:valid~span {
+    width: 110px;
+    padding: 5px 10px;
+    text-align: center;
+    background-color: var(--titleColor);
+    color: #fff;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    transform: translate(146px, -23px);
+}
+
+.submitBox {
+    margin: 10px 0;
+    padding: 18px 25px;
+    color: var(--textColor);
+    border: 1px solid var(--lightColor);
+    background-color: transparent;
+    letter-spacing: 2.5px;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.submitBox:hover {
+    color: #fff;
+    background-color: var(--titleColor);
+    transition: all 0.2s;
+}
+
+/* RESPONSIVE */
+@media screen and (max-width: 991px) {
+    .contact {
+        width: 95%;
+    }
+}
+
+@media screen and (max-width: 775px) {
+    .contact {
+        height: 200vh;
+        width: 100%;
+        flex-direction: column-reverse;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translate(0%, 0%);
+    }
+
+    .closeCont {
+        top: 50px;
+        left: 25px;
+    }
+
+    .scrollDown {
+        height: 32px;
+        width: 20px;
+        border-radius: 15px;
+        border: 2px solid var(--secondTitleColor);
+        font-size: var(--normalSize);
+        display: block;
+        position: absolute;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .scrollDown::after {
+        content: '';
+        height: 6px;
+        width: 5px;
+        background-color: var(--secondTitleColor);
+        border-radius: 50%;
+        position: absolute;
+        top: 5px;
+        left: 50%;
+        transform: translateX(-50%);
+        animation: scroll-down 2s ease-in infinite;
+    }
+
+    @keyframes scroll-down {
+
+        0%,
+        100% {
+            top: 5px;
+        }
+
+        50% {
+            top: 14px;
+        }
+    }
+
+    .moreAboutMe {
+        width: 100%;
+        height: 50%;
+    }
+
+    .form {
+        width: 100%;
+        height: 50%;
+        border-bottom: 3px solid var(--lightColor);
+    }
+}
+
+@media screen and (max-width: 575px) {
+    .contact {
+        width: 100%;
+        height: auto;
+    }
+
+    .moreAboutMe {
+        height: 100vh;
+    }
+
+    .form {
+        height: 150vh;
+    }
+
+    .inputBox {
+        margin-block: 25px;
+    }
+
+    .msgArea {
+        height: 300px;
+    }
+}

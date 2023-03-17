@@ -1,0 +1,140 @@
+/* ==== GOOGLE FONTS ==== */
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&family=Shantell+Sans:wght@300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&display=swap');
+
+/* ==== CSS VARIABLES ==== */
+:root {
+    /* 1- Defining colors */
+    --bodyColor: #fcfcfd;
+    --containerColor: #f2f2f3;
+    --lightColor: #8a8f93;
+    --textColor: #45484a;
+    --titleColor: #fd510c;
+    --secondTitleColor: #27292a;
+
+    /* 2- Defining text's size and typography*/
+    --specialFont: 'Dancing Script', cursive;
+    --titleFont: 'Shantell Sans', cursive;
+    --textFont: 'Rubik', sans-serif;
+    --bigSize: 2rem;
+    --normalSize: 1.2rem;
+    --smallSize: .989rem;
+}
+
+@media screen and (max-width: 750px) {
+
+    /* 1- Defining text's size and typography*/
+    :root {
+        --bigSize: 1.5rem;
+        --normalSize: 1rem;
+        --smallSize: .878rem;
+    }
+
+}
+
+/* ==== BASES ==== */
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    background-color: var(--bodyColor);
+    font-family: var(--textFont);
+    overflow-x: hidden;
+    position: relative;
+}
+
+img {
+    width: var(--bigSize);
+}
+
+b {
+    color: var(--titleColor);
+    font-family: var(--titleFont);
+}
+
+h3 {
+    margin-block: 20px;
+    color: var(--secondTitleColor);
+    text-transform: uppercase;
+    text-align: center;
+    font-family: var(--titleFont);
+    font-weight: bold;
+}
+
+h2 {
+    color: var(--secondTitleColor);
+    text-transform: capitalize;
+    text-align: center;
+    font-family: var(--titleFont);
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ==== TO THE TOP PAGE ==== */
+.topPage {
+    width: 40px;
+    height: 40px;
+    background-color: var(--titleColor);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 100px;
+    left: 15px;
+    z-index: 51;
+    animation: move 2s linear 0s infinite;
+    cursor: pointer;
+    display: none;
+}
+
+@keyframes move {
+
+    0%,
+    100% {
+        margin-bottom: 0;
+    }
+
+    50% {
+        margin-bottom: 5px;
+    }
+}
+
+.topPage i {
+    color: #fff;
+    font-size: calc(var(--normalSize) + 5px);
+}
+
+/* RESPONSIVE */
+@media screen and (max-width: 575px) {
+    .topPage {
+        left: 5px;
+    }
+}
+
+/* ==== MOVING MOUSE ==== */
+#mouseContainer {
+    width: 10px;
+    height: 10px;
+    background-color: var(--titleColor);
+    border-radius: 50%;
+    box-shadow: 5px 5px 20px var(--titleColor);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}

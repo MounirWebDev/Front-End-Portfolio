@@ -1,0 +1,136 @@
+/* ==== ABOUT ME AND SKILLS SECTION ==== */
+.bio {
+    width: calc(100% - 20px);
+    margin-block: 125px;
+    background-color: var(--containerColor);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.gif {
+    width: 225px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+}
+
+.gif img {
+    width: 100%;
+    height: 200px;
+    border-radius: 100%;
+}
+
+.bioContainer {
+    width: 80%;
+    padding: 15px;
+}
+
+.bioContainer p {
+    margin-block: 5px;
+    text-transform: capitalize;
+    color: var(--textColor);
+    font-size: var(--normalSize);
+    font-weight: 300;
+}
+
+.aboutMe1 a {
+    text-decoration: none;
+}
+
+.aboutMe1 span {
+    border-bottom: 1px solid var(--titleColor);
+    cursor: pointer;
+}
+
+.aboutMe2 span {
+    margin-inline: 10px;
+    color: var(--titleColor);
+    font-size: var(--bigSize);
+    font-family: var(--titleFont);
+    font-weight: 600;
+}
+
+.skills {
+    margin-block: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.skills b {
+    color: var(--textColor);
+    font-size: var(--smallSize);
+}
+
+.currentlyLearning,
+.goingToLearning {
+    width: 50%;
+    padding: 15px;
+    border: 1px solid var(--lightColor);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.currentlyLearning div,
+.goingToLearning div div {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.goingToLearning {
+    margin-left: 5px;
+}
+
+.goingToLearning div {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.react {
+    animation: rotate 1.5s linear 0s infinite;
+}
+
+/* ==== RESPONSIVE ====*/
+@media screen and (max-width: 750px) {
+    .bio {
+        margin-block: 100px;
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    .bio {
+        width: calc(100% - 5px);
+    }
+
+    .bioContainer {
+        width: 90%;
+    }
+
+    .skills {
+        border: 1px solid var(--lightColor);
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .currentlyLearning {
+        border: none;
+        border-bottom: 1px solid var(--lightColor);
+    }
+
+    .goingToLearning {
+        width: 100%;
+        margin-left: 0px;
+        border: none;
+    }
+}

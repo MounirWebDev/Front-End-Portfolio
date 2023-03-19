@@ -29,7 +29,6 @@
 
 .bioContainer p {
     margin-block: 5px;
-    text-transform: capitalize;
     color: var(--textColor);
     font-size: var(--normalSize);
     font-weight: 300;

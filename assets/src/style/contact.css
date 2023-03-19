@@ -51,7 +51,7 @@
 }
 
 .intilaPara {
-    text-transform: capitalize;
+    /* text-transform: capitalize; */
     font-size: var(--smallSize);
     position: relative;
     top: -25px;
@@ -61,7 +61,7 @@
 .secondPara {
     margin: 7px;
     line-height: 1.8;
-    text-transform: capitalize;
+    /* text-transform: capitalize; */
 }
 
 .languages {
@@ -95,7 +95,7 @@
 }
 
 .form p {
-    text-transform: capitalize;
+    /* text-transform: capitalize; */
     text-align: center;
     font-size: var(--smallSize);
     position: relative;
